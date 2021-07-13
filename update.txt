@@ -1,2 +1,7 @@
+
+v0.2
+-Added database
+-Added profile(without any fields)
+-Created profile class
 v0.1
--Создан проект
+-Project created
