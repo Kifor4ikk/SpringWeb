@@ -1,4 +1,6 @@
-
+v0.3
+-Added DAO for profiles
+-Changed Error page
 v0.2
 -Added database
 -Added profile(without any fields)

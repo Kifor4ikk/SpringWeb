@@ -3,20 +3,19 @@ package ru.kifor4ik.Webserver.models;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-@Component("profile")
 public class Profile {
 
-    private int id = -1;
-    private String name = "UNNAMED";
-    private String Nickname = "UNNICKNAMED";
+    private String id = "-1";
+    private String name = "UNNAMED9999";
+    private String nickname = "UNNICKNAMED";
     private String mail = "NOMAIL";
     private int clicks = 0;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -29,11 +28,11 @@ public class Profile {
     }
 
     public String getNickname() {
-        return Nickname;
+        return nickname;
     }
 
     public void setNickname(String nickname) {
-        Nickname = nickname;
+        this.nickname = nickname;
     }
 
     public String getMail() {
@@ -50,6 +49,10 @@ public class Profile {
 
     public void setClicks(int clicks) {
         this.clicks = clicks;
+    }
+
+    public String toString(){
+        return this.id + " " + this.name + " " + this.nickname + " " + this.mail;
     }
 }
 

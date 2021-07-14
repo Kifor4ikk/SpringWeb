@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+</head>
+<body background="Images/shinobu.png">
+  <p><h1>All users</h1></p>
+  <div th:each="profile : ${profiles}">
+    <a th:href="@{/profile/{id}(id=${profile.getId()})}" th:text="${profile.getName()}">USERNAME</a>
+  </div>
+
+</body>
+</html>

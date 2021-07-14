@@ -18,4 +18,13 @@ public class SpringController {
         model.addAttribute("name",name);
         return "Main_Page";
     }
+
+    @GetMapping("/pagenotfound")
+    public String PageNotFound() {
+        return "Page_Not_Found";
+    }
+    @GetMapping("/notfound")
+    public String image(){
+        return "Page_Not_Found";
+    }
 }
