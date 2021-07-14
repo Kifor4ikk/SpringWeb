@@ -42,6 +42,7 @@ public class ProfileDAO {
                 profile.setName(result.getString("name"));
                 profile.setNickname(result.getString("nickname"));
                 profile.setMail(result.getString("mail"));
+                profile.setPhoneNumber(result.getString("phonenumber"));
                 list.add(profile);
             }
         } catch (SQLException e){
@@ -62,6 +63,7 @@ public class ProfileDAO {
                 profile.setName(result.getString("name"));
                 profile.setNickname(result.getString("nickname"));
                 profile.setMail(result.getString("mail"));
+                profile.setPhoneNumber(result.getString("phonenumber"));
                 System.out.println("Profile was found");
             }
         } catch (SQLException e) {

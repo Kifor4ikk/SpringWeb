@@ -9,7 +9,7 @@ public class Profile {
     private String name = "UNNAMED9999";
     private String nickname = "UNNICKNAMED";
     private String mail = "NOMAIL";
-    private int clicks = 0;
+    private String phoneNumber = "000000000000";
 
     public String getId() {
         return id;
@@ -43,16 +43,17 @@ public class Profile {
         this.mail = mail;
     }
 
-    public int getClicks() {
-        return clicks;
-    }
-
-    public void setClicks(int clicks) {
-        this.clicks = clicks;
-    }
 
     public String toString(){
-        return this.id + " " + this.name + " " + this.nickname + " " + this.mail;
+        return this.id + " " + this.name + " " + this.nickname + " " + this.mail + " " + this.phoneNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
 

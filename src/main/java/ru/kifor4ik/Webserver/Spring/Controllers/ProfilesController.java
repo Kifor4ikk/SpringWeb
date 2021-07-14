@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import ru.kifor4ik.Webserver.DatabasesDAO.ProfileDAO;
 import ru.kifor4ik.Webserver.models.Profile;
 
+import javax.servlet.http.Cookie;
+
 @Controller
 @RequestMapping("/profile")
 public class ProfilesController  {
@@ -18,10 +20,6 @@ public class ProfilesController  {
         this.profileDAO = profileDAO;
     }
 
-    @GetMapping("")
-    public String profileRedirect(){
-        return "Main_Page";
-    }
     @GetMapping("/list")
     public String getAllProfiles(Model model){
         model.addAttribute("profiles", profileDAO.getAllProfiles());
@@ -37,10 +35,25 @@ public class ProfilesController  {
         model.addAttribute("profile",profile);
         return "profiles/Profile_Page";
     }
+
+    @PostMapping("/login")
+    public String loginIn(@RequestParam("login") String login, @RequestParam("password") String password){
+        //Cookie cookieProfile = new Cookie("profileActive",profile);
+       //cookieProfile.setMaxAge(60 * 60* 24 * 4);
+        System.out.println(login + " " + password);
+        return "profiles/All_Profiles_Page";
+    }
     @GetMapping("/registration")
-    public String createProfile(@ModelAttribute("profile") Profile profile){
-        profileDAO.createProfile(profile);
-        return "redirect:/";
+    public String registrationPage(Model model){
+        model.addAttribute("profile", new Profile());
+        return "profiles/Create_Profile_Page";
+    }
+
+    @PostMapping("/new")
+    public String createProfile(@ModelAttribute("profile") Profile profile, @RequestParam("password") String password,
+                                @RequestParam("passwordConfirm") String passwordConfirm){
+        System.out.println(profile.toString() + " " + password + " " + passwordConfirm);
+        return "redirect:/succesful";
     }
 
 }

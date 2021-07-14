@@ -1,3 +1,7 @@
+V0.4
+-Add registartion page
+-Add Login page
+-Update main page
 v0.3
 -Added DAO for profiles
 -Changed Error page

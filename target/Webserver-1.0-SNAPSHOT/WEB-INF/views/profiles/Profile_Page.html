@@ -5,6 +5,13 @@
     <title th:text = "${profile.getName()}" ></title>
 </head>
 <body>
-    <p th:text = "${profile.getName()}"></p>
+<h2>
+<p> ID: <text th:text = "${profile.getId()}" /></p>
+<p> Name: <text th:text = "${profile.getName()}" /></p>
+<p> Nickname: <text th:text = "${profile.getNickname()}" /></p>
+<p> Mail: <text th:text = "${profile.getMail()}" /></p>
+<p> Phone: <text th:text = "${profile.getPhoneNumber()}" /></p>
+
+</h2>
 </body>
 </html>

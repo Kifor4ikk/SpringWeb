@@ -14,15 +14,11 @@ import java.io.ObjectOutputStream;
 @Controller
 public class SpringController {
     @GetMapping("/")
-    public String MainPage(@RequestParam(value = "name",required = false) String name, Model model){
-        model.addAttribute("name",name);
+    public String MainPage(Model model){
+
         return "Main_Page";
     }
 
-    @GetMapping("/pagenotfound")
-    public String PageNotFound() {
-        return "Page_Not_Found";
-    }
     @GetMapping("/notfound")
     public String image(){
         return "Page_Not_Found";
